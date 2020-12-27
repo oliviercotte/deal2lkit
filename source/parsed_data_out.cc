@@ -121,12 +121,12 @@ ParsedDataOut<dim, spacedim>::parse_parameters_call_back()
       // The use of the barrier is
       //  to avoid the case of a processor below the master node.
 #ifdef DEAL_II_WITH_MPI
-      MPI_Barrier(comm);
+      //MPI_Barrier(comm);
 #endif
       if (Utilities::MPI::this_mpi_process(MPI_COMM_WORLD) == 0)
         create_directory(path_solution_dir);
 #ifdef DEAL_II_WITH_MPI
-      MPI_Barrier(comm);
+      //MPI_Barrier(comm);
 #endif
       path_solution_dir += "/";
     }
